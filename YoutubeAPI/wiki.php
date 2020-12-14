@@ -62,7 +62,7 @@ if (isset($_GET['query'])) {
                     </div>
                 </div>
             </a>
-           <select onchange="translateWiki('en', this.value, '<?php print $item['pageid']; ?>', '<?php print $item['title']; ?>', '<?php print $item['snippet']; ?>');">
+           <select onchange="translateWiki('en', this.value, '<?php print $item['pageid']; ?>', '<?php print strip_tags($item['title']); ?>', '<?php print strip_tags($item['snippet']); ?>');">
                 <option value="">Translate</option>
                 <option value="ar">Translate To Arabic</option>
                 <option value="sv">Translate To Swedish</option>

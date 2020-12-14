@@ -23,7 +23,7 @@ if (isset($_GET['query'])) {
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <script>
 
-    function translateWiki(from, to, pageId, wikiTitle, wikiDescription) {
+    function translateWiki (from, to, pageId, wikiTitle, wikiDescription) {
         
         // retrieve video title and description by videoId
         // send request to tranlate.php with different values and get translation as text
@@ -62,7 +62,7 @@ if (isset($_GET['query'])) {
                     </div>
                 </div>
             </a>
-           <select onchange="translateWiki('en', this.value, '<?php print $item['pageid']; ?>', '<?php print strip_tags($item['title']); ?>', '<?php print strip_tags($item['snippet']); ?>');">
+           <select onchange="translateWiki('en', this.value, '<?php print $item['pageid']; ?>', '<?php print str_replace("'", "\'", strip_tags($item['title'])); ?>', '<?php print str_replace("'", "\'", strip_tags($item['snippet'])); ?>');">
                 <option value="">Translate</option>
                 <option value="ar">Translate To Arabic</option>
                 <option value="sv">Translate To Swedish</option>

@@ -9,7 +9,7 @@ function youtube_search ($searchQuery, $maxResults) {
 
 if (isset($_GET['query'])) {
     
-    $videos_search = youtube_search(str_replace(' ', '+', $_GET['query']), 5);
+    $videos_search = youtube_search(str_replace(' ', '+', $_GET['query']), 20);
     $search_list = $videos_search['items'];
     
     //print '<pre>';   
@@ -70,7 +70,7 @@ if (isset($_GET['query'])) {
                     </div>
                 </div>
             </a>
-            <select onchange="translateVideo('en', this.value, '<?php print $item['id']['videoId']; ?>', '<?php print $item['snippet']['title']; ?>', '<?php print $item['snippet']['description']; ?>');">
+            <select onchange="translateVideo('en', this.value, '<?php print $item['id']['videoId']; ?>', '<?php print str_replace("'", "\'", $item['snippet']['title']); ?>', '<?php print str_replace("'", "\'", $item['snippet']['description']); ?>');">
                 <option value="">Translate</option>
                 <option value="ar">Translate To Arabic</option>
                 <option value="sv">Translate To Swedish</option>

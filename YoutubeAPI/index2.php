@@ -18,7 +18,7 @@
         <h3><a class="active" href="index.php">Home</a></h3>
 
     <form action='youtube_api.php' method="GET">
-        <input type="text" placeholder="Search.." name="query">
+        <input type="text" placeholder="Search in Youtube" name="query">
         <button class="btn bg-dark" type="submit">Search</button>
     </form> <!-- This form redirects to youtube_api.php?query=xxx where xxx is the value of the input text which has the name 'query'  -->
 
